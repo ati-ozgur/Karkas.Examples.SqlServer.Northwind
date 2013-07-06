@@ -13,6 +13,13 @@ namespace Karkas.Examples.SqlServer.Northwind.ConsoleApp
         static void Main(string[] args)
         {
 
+            CustomersBs bs = new CustomersBs();
+
+            var list = bs.SorgulaDetayTabloGetir<Orders>("ALFKI");
+
+            Console.WriteLine(list.GetType());
+
+
 
 
 
