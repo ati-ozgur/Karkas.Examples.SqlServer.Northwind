@@ -18,5 +18,10 @@ namespace Karkas.Examples.SqlServer.Northwind.Bs.Dbo
         {
             return dal.SorgulaCountryVeCityIle(country, city);
         }
+
+        public DataTable SorgulaCustomerOrdersEmpBilgileriniGetir(string customerId)
+        {
+            return dal.SorgulaCustomerOrdersEmpBilgileriniGetir(customerId);
+        }
     }
 }

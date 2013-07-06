@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,13 @@ namespace Karkas.Examples.SqlServer.Northwind.ConsoleApp
         {
 
             CustomersBs bs = new CustomersBs();
-            var list = bs.SorgulaCountryVeCityIle("G", "B");
-            customerListesiniEkranaYaz(list);
+            string customerId = "BERGS";
+            DataTable dt = bs.SorgulaCustomerOrdersEmpBilgileriniGetir(customerId);
 
+            foreach (DataRow item in dt.Rows)
+            {
+                Console.WriteLine(item["CustomerID"].ToString() + " " + item["EmployeeID"].ToString() + " " + item["EmpLastName"].ToString());
+            }
 
             
 
