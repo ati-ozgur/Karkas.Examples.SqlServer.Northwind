@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.Examples.SqlServer.N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.Examples.SqlServer.Northwind.Dal", "Dal\Karkas.Examples.SqlServer.Northwind.Dal\Karkas.Examples.SqlServer.Northwind.Dal.csproj", "{DCC0EF00-8737-41FF-B3B4-CA2BD741A8B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.Examples.SqlServer.Northwind.Bs", "Bs\Karkas.Examples.SqlServer.Northwind.Bs\Karkas.Examples.SqlServer.Northwind.Bs.csproj", "{3690CFD6-F1FE-4314-BB66-1F241B137F89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{DCC0EF00-8737-41FF-B3B4-CA2BD741A8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCC0EF00-8737-41FF-B3B4-CA2BD741A8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCC0EF00-8737-41FF-B3B4-CA2BD741A8B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3690CFD6-F1FE-4314-BB66-1F241B137F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3690CFD6-F1FE-4314-BB66-1F241B137F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3690CFD6-F1FE-4314-BB66-1F241B137F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3690CFD6-F1FE-4314-BB66-1F241B137F89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
