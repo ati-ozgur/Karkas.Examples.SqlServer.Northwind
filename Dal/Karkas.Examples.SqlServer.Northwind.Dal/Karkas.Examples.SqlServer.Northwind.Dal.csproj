@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DCC0EF00-8737-41FF-B3B4-CA2BD741A8B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Karkas.Examples.SqlServer.Northwind.Dal</RootNamespace>
+    <AssemblyName>Karkas.Examples.SqlServer.Northwind.Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Karkas.Core.DataUtil">
+      <HintPath>..\..\packages\Karkas.Core.DataUtil.1.0.0\lib\Karkas.Core.DataUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Karkas.Core.ExtensionsMethods">
+      <HintPath>..\..\packages\Karkas.Core.ExtensionsMethods.1.0.2\lib\Karkas.Core.ExtensionsMethods.dll</HintPath>
+    </Reference>
+    <Reference Include="Karkas.Core.Onaylama">
+      <HintPath>..\..\packages\Karkas.Core.Onaylama.1.0.0\lib\Karkas.Core.Onaylama.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Dbo\OrdersDal.cs" />
+    <Compile Include="Dbo\OrdersDal.generated.cs" />
+    <Compile Include="Dbo\ProductsDal.cs" />
+    <Compile Include="Dbo\ProductsDal.generated.cs" />
+    <Compile Include="Dbo\RegionDal.cs" />
+    <Compile Include="Dbo\RegionDal.generated.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TypeLibrary\Karkas.Examples.SqlServer.Northwind.TypeLibrary\Karkas.Examples.SqlServer.Northwind.TypeLibrary.csproj">
+      <Project>{aa5bbcdf-19fe-4451-9b87-f790033458de}</Project>
+      <Name>Karkas.Examples.SqlServer.Northwind.TypeLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
