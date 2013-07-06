@@ -4,6 +4,14 @@ TypeLibrary
 Dal - Data Access Layer - Veri Ulaþým Katmaný
 Bs  - Business Services - Ýþ Hizmetleri
 
+
+CRUD
+Create - Insert - Ekle
+Read   - Select - Oku - Sorgula - Seç
+Update - Update - Güncelle
+Deleet - Delete - Sil
+
+
 Windows.UI
 Asp.NET Web Forms
 Asp.NET MVC 
