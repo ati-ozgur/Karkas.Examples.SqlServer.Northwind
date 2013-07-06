@@ -53,12 +53,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Dbo\CategoriesBs.cs" />
+    <Compile Include="Dbo\CategoriesBs.generated.cs" />
+    <Compile Include="Dbo\CustomerCustomerDemoBs.cs" />
+    <Compile Include="Dbo\CustomerCustomerDemoBs.generated.cs" />
+    <Compile Include="Dbo\CustomerDemographicsBs.cs" />
+    <Compile Include="Dbo\CustomerDemographicsBs.generated.cs" />
+    <Compile Include="Dbo\CustomersBs.cs" />
+    <Compile Include="Dbo\CustomersBs.generated.cs" />
+    <Compile Include="Dbo\EmployeesBs.cs" />
+    <Compile Include="Dbo\EmployeesBs.generated.cs" />
+    <Compile Include="Dbo\EmployeeTerritoriesBs.cs" />
+    <Compile Include="Dbo\EmployeeTerritoriesBs.generated.cs" />
+    <Compile Include="Dbo\OrderDetailsBs.cs" />
+    <Compile Include="Dbo\OrderDetailsBs.generated.cs" />
     <Compile Include="Dbo\OrdersBs.cs" />
     <Compile Include="Dbo\OrdersBs.generated.cs" />
     <Compile Include="Dbo\ProductsBs.cs" />
     <Compile Include="Dbo\ProductsBs.generated.cs" />
     <Compile Include="Dbo\RegionBs.cs" />
     <Compile Include="Dbo\RegionBs.generated.cs" />
+    <Compile Include="Dbo\ShippersBs.cs" />
+    <Compile Include="Dbo\ShippersBs.generated.cs" />
+    <Compile Include="Dbo\SuppliersBs.cs" />
+    <Compile Include="Dbo\SuppliersBs.generated.cs" />
+    <Compile Include="Dbo\TerritoriesBs.cs" />
+    <Compile Include="Dbo\TerritoriesBs.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

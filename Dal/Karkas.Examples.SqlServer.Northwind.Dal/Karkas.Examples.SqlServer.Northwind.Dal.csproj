@@ -53,12 +53,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Dbo\CategoriesDal.cs" />
+    <Compile Include="Dbo\CategoriesDal.generated.cs" />
+    <Compile Include="Dbo\CustomerCustomerDemoDal.cs" />
+    <Compile Include="Dbo\CustomerCustomerDemoDal.generated.cs" />
+    <Compile Include="Dbo\CustomerDemographicsDal.cs" />
+    <Compile Include="Dbo\CustomerDemographicsDal.generated.cs" />
+    <Compile Include="Dbo\CustomersDal.cs" />
+    <Compile Include="Dbo\CustomersDal.generated.cs" />
+    <Compile Include="Dbo\EmployeesDal.cs" />
+    <Compile Include="Dbo\EmployeesDal.generated.cs" />
+    <Compile Include="Dbo\EmployeeTerritoriesDal.cs" />
+    <Compile Include="Dbo\EmployeeTerritoriesDal.generated.cs" />
+    <Compile Include="Dbo\OrderDetailsDal.cs" />
+    <Compile Include="Dbo\OrderDetailsDal.generated.cs" />
     <Compile Include="Dbo\OrdersDal.cs" />
     <Compile Include="Dbo\OrdersDal.generated.cs" />
     <Compile Include="Dbo\ProductsDal.cs" />
     <Compile Include="Dbo\ProductsDal.generated.cs" />
     <Compile Include="Dbo\RegionDal.cs" />
     <Compile Include="Dbo\RegionDal.generated.cs" />
+    <Compile Include="Dbo\ShippersDal.cs" />
+    <Compile Include="Dbo\ShippersDal.generated.cs" />
+    <Compile Include="Dbo\SuppliersDal.cs" />
+    <Compile Include="Dbo\SuppliersDal.generated.cs" />
+    <Compile Include="Dbo\TerritoriesDal.cs" />
+    <Compile Include="Dbo\TerritoriesDal.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
