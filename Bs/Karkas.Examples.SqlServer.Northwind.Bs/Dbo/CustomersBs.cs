@@ -14,5 +14,9 @@ namespace Karkas.Examples.SqlServer.Northwind.Bs.Dbo
 {
 	public partial class CustomersBs : BaseBs<Customers, CustomersDal>
 	{
-	}
+        public List<Customers> SorgulaCountryVeCityIle(string country, string city)
+        {
+            return dal.SorgulaCountryVeCityIle(country, city);
+        }
+    }
 }

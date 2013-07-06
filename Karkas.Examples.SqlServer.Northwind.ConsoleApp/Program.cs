@@ -13,12 +13,21 @@ namespace Karkas.Examples.SqlServer.Northwind.ConsoleApp
         static void Main(string[] args)
         {
 
-            //SorgulaDetayTabloGetir_HataliCalisiyor();
-
+            CustomersBs bs = new CustomersBs();
+            var list = bs.SorgulaCountryVeCityIle("G", "B");
+            customerListesiniEkranaYaz(list);
 
 
             
 
+        }
+
+        private static void customerListesiniEkranaYaz(List<Customers> list)
+        {
+            foreach (Customers customer in list)
+            {
+                Console.WriteLine(customer.CustomerId + " " + customer.CompanyName);
+            }
         }
 
         private static void SorgulaDetayTabloGetir_HataliCalisiyor()

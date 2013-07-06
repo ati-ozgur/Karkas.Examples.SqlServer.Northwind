@@ -12,7 +12,18 @@ using Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo;
 
 namespace Karkas.Examples.SqlServer.Northwind.Dal.Dbo
 {
-public partial class CustomersDal
-{
-}
+    public partial class CustomersDal
+    {
+        public List<Customers> SorgulaCountryVeCityIle(string country, string city)
+        {
+            List<Customers> liste = new List<Customers>();
+            string filtre = @"Country LIKE 'G%'
+                    AND
+                    City LIKE 'B%'";
+            SorguCalistir(liste, filtre);
+            return liste;
+
+
+        }
+    }
 }
