@@ -1,0 +1,14 @@
+Connection String : Data Source=.\SQLSERVER2008R2;Initial Catalog=NORTHWIND;Integrated Security=True
+
+TypeLibrary
+Dal - Data Access Layer - Veri Ulaþým Katmaný
+Bs  - Business Services - Ýþ Hizmetleri
+
+Windows.UI
+Asp.NET Web Forms
+Asp.NET MVC 
+
+
+
+
+
