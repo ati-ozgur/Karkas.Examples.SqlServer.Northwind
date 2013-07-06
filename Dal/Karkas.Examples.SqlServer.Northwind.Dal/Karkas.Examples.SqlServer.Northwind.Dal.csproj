@@ -30,8 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Karkas.Core.DataUtil">
-      <HintPath>..\..\packages\Karkas.Core.DataUtil.1.0.0\lib\Karkas.Core.DataUtil.dll</HintPath>
+    <Reference Include="Karkas.Core.DataUtil, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Karkas.Core.DataUtil.1.0.2\lib\Karkas.Core.DataUtil.dll</HintPath>
     </Reference>
     <Reference Include="Karkas.Core.ExtensionsMethods">
       <HintPath>..\..\packages\Karkas.Core.ExtensionsMethods.1.0.2\lib\Karkas.Core.ExtensionsMethods.dll</HintPath>
