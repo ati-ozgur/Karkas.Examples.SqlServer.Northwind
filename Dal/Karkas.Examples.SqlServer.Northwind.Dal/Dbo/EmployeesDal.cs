@@ -12,7 +12,18 @@ using Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo;
 
 namespace Karkas.Examples.SqlServer.Northwind.Dal.Dbo
 {
-public partial class EmployeesDal
-{
-}
+    public partial class EmployeesDal
+    {
+        public List<Employees> SorgulaFirstNameIle(string FirstName)
+        {
+            string filtre = "FirstName LIKE 'A%'";
+
+            List<Employees> list = new List<Employees>();
+            SorguCalistir(list, filtre);
+            return list;
+
+
+
+        }
+    }
 }
