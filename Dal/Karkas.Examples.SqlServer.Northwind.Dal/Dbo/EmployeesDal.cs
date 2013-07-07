@@ -16,6 +16,21 @@ namespace Karkas.Examples.SqlServer.Northwind.Dal.Dbo
     {
         public List<Employees> SorgulaFirstNameIle(string FirstName)
         {
+            string filtre = "FirstName LIKE @FirstName + '%'";
+            ParameterBuilder builder = Template.getParameterBuilder();
+            builder.parameterEkle("@FirstName", SqlDbType.VarChar, FirstName);
+
+
+            List<Employees> list = new List<Employees>();
+            SorguCalistir(list, filtre,builder.GetParameterArray());
+            return list;
+
+
+
+        }
+
+        private List<Employees> SorgulaFirstNameIleHardCoded(string FirstName)
+        {
             string filtre = "FirstName LIKE 'A%'";
 
             List<Employees> list = new List<Employees>();

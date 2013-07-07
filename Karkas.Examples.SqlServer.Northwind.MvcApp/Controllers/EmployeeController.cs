@@ -12,21 +12,14 @@ namespace Karkas.Examples.SqlServer.Northwind.MvcApp.Controllers
         //
         // GET: /Employee/
 
-        public ActionResult Index()
-        {
-            EmployeesBs bs = new EmployeesBs();
-            var empList = bs.SorgulaHepsiniGetir();
-            return View(empList);
-        }
-
-
-        [HttpPost]
-        public ActionResult Index(String FirstName)
+        public ActionResult Index(String FirstName = "")
         {
             EmployeesBs bs = new EmployeesBs();
             var empList = bs.SorgulaFirstNameIle(FirstName);
             return View(empList);
         }
+
+
 
         //
         // GET: /Employee/Details/5
