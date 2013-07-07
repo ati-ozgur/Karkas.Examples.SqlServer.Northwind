@@ -14,6 +14,22 @@ namespace Karkas.Examples.SqlServer.Northwind.ConsoleApp
         static void Main(string[] args)
         {
 
+            Categories c = new Categories();
+            c.CategoryName = "Deneme From Karkas";
+            c.Description = "Desc";
+
+            CategoriesBs bs = new CategoriesBs();
+            bs.Ekle(c);
+
+            Console.WriteLine(c.CategoryId);
+
+
+            
+
+        }
+
+        private static void SorgulaJoinOrnek()
+        {
             CustomersBs bs = new CustomersBs();
             string customerId = "BERGS";
             DataTable dt = bs.SorgulaCustomerOrdersEmpBilgileriniGetir(customerId);
@@ -22,9 +38,6 @@ namespace Karkas.Examples.SqlServer.Northwind.ConsoleApp
             {
                 Console.WriteLine(item["CustomerID"].ToString() + " " + item["EmployeeID"].ToString() + " " + item["EmpLastName"].ToString());
             }
-
-            
-
         }
 
         private static void customerListesiniEkranaYaz(List<Customers> list)
