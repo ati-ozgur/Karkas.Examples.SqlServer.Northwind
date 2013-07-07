@@ -11,6 +11,10 @@ Read   - Select - Oku - Sorgula - Seç
 Update - Update - Güncelle
 Deleet - Delete - Sil
 
+Select Basit Arama
+Select View Model
+
+
 
 Windows.UI
 Asp.NET Web Forms
