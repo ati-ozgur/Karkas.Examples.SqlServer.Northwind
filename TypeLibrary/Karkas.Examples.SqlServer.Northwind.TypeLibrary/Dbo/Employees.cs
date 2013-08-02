@@ -18,5 +18,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 	}
 	public class 	EmployeesValidation
 	{
+
+
 	}
 }

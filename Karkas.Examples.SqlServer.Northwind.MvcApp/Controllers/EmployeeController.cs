@@ -26,7 +26,9 @@ namespace Karkas.Examples.SqlServer.Northwind.MvcApp.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            EmployeesBs bs = new EmployeesBs();
+            var emp = bs.SorgulaEmployeeIdIle(id);
+            return View(emp);
         }
 
         //
