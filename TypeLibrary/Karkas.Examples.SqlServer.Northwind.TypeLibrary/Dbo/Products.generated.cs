@@ -28,6 +28,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		private bool discontinued;
 
 		[Key]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public int ProductId
 		{
@@ -48,6 +49,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(40)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string ProductName
 		{
@@ -106,7 +108,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(20)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string QuantityPerUnit
 		{
@@ -145,7 +146,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public Nullable<short> UnitsInStock
 		{
@@ -165,7 +165,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public Nullable<short> UnitsOnOrder
 		{
@@ -185,7 +184,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public Nullable<short> ReorderLevel
 		{
@@ -205,6 +203,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public bool Discontinued
 		{
@@ -224,206 +223,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string ProductIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return productId.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				ProductId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"ProductId",string.Format(CEVIRI_YAZISI,"ProductId","int")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string SupplierIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return supplierId != null ? supplierId.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				SupplierId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"SupplierId",string.Format(CEVIRI_YAZISI,"SupplierId","int")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string CategoryIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return categoryId != null ? categoryId.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				CategoryId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"CategoryId",string.Format(CEVIRI_YAZISI,"CategoryId","int")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string UnitPriceAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return unitPrice != null ? unitPrice.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					decimal _a = Convert.ToDecimal(value);
-				UnitPrice = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"UnitPrice",string.Format(CEVIRI_YAZISI,"UnitPrice","decimal")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string UnitsInStockAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return unitsInStock != null ? unitsInStock.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					short _a = Convert.ToInt16(value);
-				UnitsInStock = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"UnitsInStock",string.Format(CEVIRI_YAZISI,"UnitsInStock","short")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string UnitsOnOrderAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return unitsOnOrder != null ? unitsOnOrder.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					short _a = Convert.ToInt16(value);
-				UnitsOnOrder = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"UnitsOnOrder",string.Format(CEVIRI_YAZISI,"UnitsOnOrder","short")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string ReorderLevelAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return reorderLevel != null ? reorderLevel.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					short _a = Convert.ToInt16(value);
-				ReorderLevel = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"ReorderLevel",string.Format(CEVIRI_YAZISI,"ReorderLevel","short")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string DiscontinuedAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return discontinued.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					bool _a = Convert.ToBoolean(value);
-				Discontinued = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"Discontinued",string.Format(CEVIRI_YAZISI,"Discontinued","bool")));
-				}
-			}
-		}
-
 		public Products ShallowCopy()
 		{
 			Products obj = new Products();
@@ -440,11 +239,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "ProductName"));			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "Discontinued"));		}
 		public class PropertyIsimleri
 		{
 			public const string ProductId = "ProductID";

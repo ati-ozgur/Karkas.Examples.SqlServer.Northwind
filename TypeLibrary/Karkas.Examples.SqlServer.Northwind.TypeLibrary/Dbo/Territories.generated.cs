@@ -22,6 +22,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 
 		[Key]
 		[StringLength(20)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string TerritoryId
 		{
@@ -42,6 +43,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(50)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string TerritoryDescription
 		{
@@ -61,6 +63,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public int RegionId
 		{
@@ -80,31 +83,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string RegionIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return regionId.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				RegionId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"RegionId",string.Format(CEVIRI_YAZISI,"RegionId","int")));
-				}
-			}
-		}
-
 		public Territories ShallowCopy()
 		{
 			Territories obj = new Territories();
@@ -114,11 +92,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "TerritoryDescription"));			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "RegionId"));		}
 		public class PropertyIsimleri
 		{
 			public const string TerritoryId = "TerritoryID";

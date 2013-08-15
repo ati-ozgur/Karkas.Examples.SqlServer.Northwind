@@ -20,6 +20,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		private string territoryId;
 
 		[Key]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public int EmployeeId
 		{
@@ -41,6 +42,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 
 		[Key]
 		[StringLength(20)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string TerritoryId
 		{
@@ -60,31 +62,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string EmployeeIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return employeeId.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				EmployeeId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"EmployeeId",string.Format(CEVIRI_YAZISI,"EmployeeId","int")));
-				}
-			}
-		}
-
 		public EmployeeTerritories ShallowCopy()
 		{
 			EmployeeTerritories obj = new EmployeeTerritories();
@@ -93,9 +70,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-		}
 		public class PropertyIsimleri
 		{
 			public const string EmployeeId = "EmployeeID";

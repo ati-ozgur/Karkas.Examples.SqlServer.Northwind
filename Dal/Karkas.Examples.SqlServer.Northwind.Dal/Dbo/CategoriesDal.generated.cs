@@ -6,6 +6,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Text;
 using Karkas.Core.DataUtil;
+using Karkas.Core.DataUtil.BaseClasses;
 using Karkas.Examples.SqlServer.Northwind.TypeLibrary;
 using Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo;
 

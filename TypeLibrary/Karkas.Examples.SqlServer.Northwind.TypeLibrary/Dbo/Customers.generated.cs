@@ -30,6 +30,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 
 		[Key]
 		[StringLength(5)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string CustomerId
 		{
@@ -50,6 +51,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(40)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string CompanyName
 		{
@@ -70,7 +72,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(30)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string ContactName
 		{
@@ -91,7 +92,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(30)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string ContactTitle
 		{
@@ -112,7 +112,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(60)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Address
 		{
@@ -133,7 +132,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(15)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string City
 		{
@@ -154,7 +152,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(15)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Region
 		{
@@ -175,7 +172,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(10)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string PostalCode
 		{
@@ -196,7 +192,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(15)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Country
 		{
@@ -217,7 +212,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(24)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Phone
 		{
@@ -238,7 +232,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(24)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Fax
 		{
@@ -275,10 +268,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "CompanyName"));		}
 		public class PropertyIsimleri
 		{
 			public const string CustomerId = "CustomerID";

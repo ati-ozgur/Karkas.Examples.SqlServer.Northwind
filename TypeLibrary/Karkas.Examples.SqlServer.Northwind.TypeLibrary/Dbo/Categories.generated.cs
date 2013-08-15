@@ -22,6 +22,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		private byte[] picture;
 
 		[Key]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public int CategoryId
 		{
@@ -42,6 +43,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(15)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string CategoryName
 		{
@@ -61,7 +63,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Description
 		{
@@ -81,7 +82,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public byte[] Picture
 		{
@@ -101,48 +101,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string CategoryIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return categoryId.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				CategoryId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"CategoryId",string.Format(CEVIRI_YAZISI,"CategoryId","int")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string PictureAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return picture != null ? picture.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				throw new ArgumentException("String'ten byte[] array'e cevirim desteklenmemektedir");
-			}
-		}
-
 		public Categories ShallowCopy()
 		{
 			Categories obj = new Categories();
@@ -153,10 +111,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "CategoryName"));		}
 		public class PropertyIsimleri
 		{
 			public const string CategoryId = "CategoryID";

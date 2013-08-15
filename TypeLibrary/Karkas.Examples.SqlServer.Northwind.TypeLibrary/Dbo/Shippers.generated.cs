@@ -21,6 +21,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		private string phone;
 
 		[Key]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public int ShipperId
 		{
@@ -41,6 +42,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(40)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string CompanyName
 		{
@@ -61,7 +63,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(24)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Phone
 		{
@@ -81,31 +82,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string ShipperIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return shipperId.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				ShipperId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"ShipperId",string.Format(CEVIRI_YAZISI,"ShipperId","int")));
-				}
-			}
-		}
-
 		public Shippers ShallowCopy()
 		{
 			Shippers obj = new Shippers();
@@ -115,10 +91,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "CompanyName"));		}
 		public class PropertyIsimleri
 		{
 			public const string ShipperId = "ShipperID";

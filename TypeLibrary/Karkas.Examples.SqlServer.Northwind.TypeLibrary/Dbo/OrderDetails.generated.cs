@@ -23,6 +23,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		private float discount;
 
 		[Key]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public int OrderId
 		{
@@ -43,6 +44,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[Key]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public int ProductId
 		{
@@ -62,6 +64,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public decimal UnitPrice
 		{
@@ -81,6 +84,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public short Quantity
 		{
@@ -100,6 +104,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public float Discount
 		{
@@ -119,131 +124,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string OrderIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return orderId.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				OrderId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"OrderId",string.Format(CEVIRI_YAZISI,"OrderId","int")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string ProductIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return productId.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				ProductId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"ProductId",string.Format(CEVIRI_YAZISI,"ProductId","int")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string UnitPriceAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return unitPrice.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					decimal _a = Convert.ToDecimal(value);
-				UnitPrice = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"UnitPrice",string.Format(CEVIRI_YAZISI,"UnitPrice","decimal")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string QuantityAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return quantity.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					short _a = Convert.ToInt16(value);
-				Quantity = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"Quantity",string.Format(CEVIRI_YAZISI,"Quantity","short")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string DiscountAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return discount.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					float _a = Convert.ToSingle(value);
-				Discount = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"Discount",string.Format(CEVIRI_YAZISI,"Discount","float")));
-				}
-			}
-		}
-
 		public OrderDetails ShallowCopy()
 		{
 			OrderDetails obj = new OrderDetails();
@@ -255,12 +135,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "UnitPrice"));			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "Quantity"));			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "Discount"));		}
 		public class PropertyIsimleri
 		{
 			public const string OrderId = "OrderID";

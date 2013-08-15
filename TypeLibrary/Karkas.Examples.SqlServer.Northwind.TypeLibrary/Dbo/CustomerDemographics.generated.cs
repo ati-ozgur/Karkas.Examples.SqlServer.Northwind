@@ -21,6 +21,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 
 		[Key]
 		[StringLength(10)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string CustomerTypeId
 		{
@@ -40,7 +41,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string CustomerDesc
 		{
@@ -68,9 +68,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-		}
 		public class PropertyIsimleri
 		{
 			public const string CustomerTypeId = "CustomerTypeID";

@@ -36,6 +36,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		private string photoPath;
 
 		[Key]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public int EmployeeId
 		{
@@ -56,6 +57,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(20)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string LastName
 		{
@@ -76,6 +78,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(10)]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string FirstName
 		{
@@ -96,7 +99,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(30)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Title
 		{
@@ -117,7 +119,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(25)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string TitleOfCourtesy
 		{
@@ -137,7 +138,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public Nullable<DateTime> BirthDate
 		{
@@ -157,7 +157,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public Nullable<DateTime> HireDate
 		{
@@ -178,7 +177,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(60)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Address
 		{
@@ -199,7 +197,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(15)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string City
 		{
@@ -220,7 +217,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(15)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Region
 		{
@@ -241,7 +237,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(10)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string PostalCode
 		{
@@ -262,7 +257,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(15)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Country
 		{
@@ -283,7 +277,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(24)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string HomePhone
 		{
@@ -304,7 +297,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(4)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Extension
 		{
@@ -324,7 +316,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public byte[] Photo
 		{
@@ -344,7 +335,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string Notes
 		{
@@ -384,7 +374,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(255)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string PhotoPath
 		{
@@ -401,123 +390,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 					this.RowState = DataRowState.Modified;
 				}
 				photoPath = value;
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string EmployeeIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return employeeId.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				EmployeeId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"EmployeeId",string.Format(CEVIRI_YAZISI,"EmployeeId","int")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string BirthDateAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return birthDate != null ? birthDate.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					DateTime _a = Convert.ToDateTime(value);
-				BirthDate = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"BirthDate",string.Format(CEVIRI_YAZISI,"BirthDate","DateTime")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string HireDateAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return hireDate != null ? hireDate.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					DateTime _a = Convert.ToDateTime(value);
-				HireDate = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"HireDate",string.Format(CEVIRI_YAZISI,"HireDate","DateTime")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string PhotoAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return photo != null ? photo.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				throw new ArgumentException("String'ten byte[] array'e cevirim desteklenmemektedir");
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string ReportsToAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return reportsTo != null ? reportsTo.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				ReportsTo = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"ReportsTo",string.Format(CEVIRI_YAZISI,"ReportsTo","int")));
-				}
 			}
 		}
 
@@ -545,11 +417,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "LastName"));			
-			this.Onaylayici.OnaylayiciListesi.Add(new GerekliAlanOnaylayici(this, "FirstName"));		}
 		public class PropertyIsimleri
 		{
 			public const string EmployeeId = "EmployeeID";

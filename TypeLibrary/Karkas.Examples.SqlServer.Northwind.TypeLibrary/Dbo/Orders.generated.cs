@@ -32,6 +32,7 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		private string shipCountry;
 
 		[Key]
+		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public int OrderId
 		{
@@ -52,7 +53,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(5)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string CustomerId
 		{
@@ -91,7 +91,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public Nullable<DateTime> OrderDate
 		{
@@ -111,7 +110,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public Nullable<DateTime> RequiredDate
 		{
@@ -131,7 +129,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			}
 		}
 
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public Nullable<DateTime> ShippedDate
 		{
@@ -190,7 +187,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(40)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string ShipName
 		{
@@ -211,7 +207,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(60)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string ShipAddress
 		{
@@ -232,7 +227,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(15)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string ShipCity
 		{
@@ -253,7 +247,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(15)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string ShipRegion
 		{
@@ -274,7 +267,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(10)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string ShipPostalCode
 		{
@@ -295,7 +287,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 		}
 
 		[StringLength(15)]
-		[Required]
 		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
 		public string ShipCountry
 		{
@@ -312,181 +303,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 					this.RowState = DataRowState.Modified;
 				}
 				shipCountry = value;
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string OrderIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return orderId.ToString(); 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				OrderId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"OrderId",string.Format(CEVIRI_YAZISI,"OrderId","int")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string EmployeeIdAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return employeeId != null ? employeeId.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				EmployeeId = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"EmployeeId",string.Format(CEVIRI_YAZISI,"EmployeeId","int")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string OrderDateAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return orderDate != null ? orderDate.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					DateTime _a = Convert.ToDateTime(value);
-				OrderDate = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"OrderDate",string.Format(CEVIRI_YAZISI,"OrderDate","DateTime")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string RequiredDateAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return requiredDate != null ? requiredDate.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					DateTime _a = Convert.ToDateTime(value);
-				RequiredDate = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"RequiredDate",string.Format(CEVIRI_YAZISI,"RequiredDate","DateTime")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string ShippedDateAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return shippedDate != null ? shippedDate.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					DateTime _a = Convert.ToDateTime(value);
-				ShippedDate = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"ShippedDate",string.Format(CEVIRI_YAZISI,"ShippedDate","DateTime")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string ShipViaAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return shipVia != null ? shipVia.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					int _a = Convert.ToInt32(value);
-				ShipVia = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"ShipVia",string.Format(CEVIRI_YAZISI,"ShipVia","int")));
-				}
-			}
-		}
-
-		[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-		[XmlIgnore, SoapIgnore]
-		[ScaffoldColumn(false)]
-		public string FreightAsString
-		{
-			[DebuggerStepThrough]
-			get
-			{
-				 return freight != null ? freight.ToString() : ""; 
-			}
-			[DebuggerStepThrough]
-			set
-			{
-				try
-				{
-					decimal _a = Convert.ToDecimal(value);
-				Freight = _a;
-				}
-				catch(Exception)
-				{
-					this.Onaylayici.OnaylayiciListesi.Add(new DaimaBasarisiz(this,"Freight",string.Format(CEVIRI_YAZISI,"Freight","decimal")));
-				}
 			}
 		}
 
@@ -510,9 +326,6 @@ namespace Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo
 			return obj;
 		}
 		
-		protected override void OnaylamaListesiniOlusturCodeGeneration()
-		{
-		}
 		public class PropertyIsimleri
 		{
 			public const string OrderId = "OrderID";
