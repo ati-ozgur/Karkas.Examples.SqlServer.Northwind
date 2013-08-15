@@ -8,6 +8,7 @@ using Karkas.Core.DataUtil;
 using Karkas.Examples.SqlServer.Northwind.TypeLibrary;
 using Karkas.Examples.SqlServer.Northwind.TypeLibrary.Dbo;
 using Karkas.Examples.SqlServer.Northwind.Dal.Dbo;
+using Karkas.Core.DataUtil.BaseClasses;
 
 
 namespace Karkas.Examples.SqlServer.Northwind.Bs.Dbo
