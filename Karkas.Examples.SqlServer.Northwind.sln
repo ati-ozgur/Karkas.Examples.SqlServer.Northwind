@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.Examples.SqlServer.N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karkas.Examples.SqlServer.Northwind.MvcApp", "Karkas.Examples.SqlServer.Northwind.MvcApp\Karkas.Examples.SqlServer.Northwind.MvcApp.csproj", "{889BCCB3-FA71-4FBF-B9FF-E1911BA815AE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "model", "model", "{BA1D60BC-A85A-45D0-9865-4B2767BC2E87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,5 +42,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3690CFD6-F1FE-4314-BB66-1F241B137F89} = {BA1D60BC-A85A-45D0-9865-4B2767BC2E87}
+		{DCC0EF00-8737-41FF-B3B4-CA2BD741A8B6} = {BA1D60BC-A85A-45D0-9865-4B2767BC2E87}
+		{AA5BBCDF-19FE-4451-9B87-F790033458DE} = {BA1D60BC-A85A-45D0-9865-4B2767BC2E87}
 	EndGlobalSection
 EndGlobal
